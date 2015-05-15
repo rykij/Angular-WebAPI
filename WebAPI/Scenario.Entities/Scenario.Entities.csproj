@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9389CD5C-69FC-49FC-925A-1F717BD86924}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Scenario.Entities</RootNamespace>
+    <AssemblyName>Scenario.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ScenarioEntities.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BhcTemplate.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Comparers\Comparers.cs" />
+    <Compile Include="Configuration.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credit.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditTransitionMatrix.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CURVES_MC_1.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CURVES_MC_2.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultCredit.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntitiesMethods\Configuration.partial.cs" />
+    <Compile Include="EntitiesMethods\NominalCurve.partial.cs" />
+    <Compile Include="EntitiesMethods\IScenarioStatistics.cs" />
+    <Compile Include="EntitiesMethods\Results\CertainEquivalent.cs" />
+    <Compile Include="EntitiesMethods\Results\AveragesTest.cs" />
+    <Compile Include="EntitiesMethods\Results\PercentilesTest.cs" />
+    <Compile Include="EntitiesMethods\Results\MomentsTest.cs" />
+    <Compile Include="EntitiesMethods\Results\StatisticsTest.cs" />
+    <Compile Include="EntitiesMethods\Results\CorrelationsTest.cs" />
+    <Compile Include="EntitiesMethods\Results\PricingTest.cs" />
+    <Compile Include="EntitiesMethods\Results\ScenarioCertainEquivalent.cs" />
+    <Compile Include="EntitiesMethods\ScenarioSummary.partial.cs" />
+    <Compile Include="EntitiesMethods\SwaptionCurve.partial.cs" />
+    <Compile Include="EntitiesMethods\Inflation.partial.cs" />
+    <Compile Include="EntitiesMethods\InflationCurve.partial.cs" />
+    <Compile Include="EntitiesMethods\SSTScenarioType.partial.cs" />
+    <Compile Include="EntitiesMethods\ITypedScenarioCurve.cs" />
+    <Compile Include="EntitiesMethods\ModelLmmplusSvjdMonthly.partial.cs" />
+    <Compile Include="EntitiesMethods\ModelLmmplusMonthly.partial.cs" />
+    <Compile Include="EntitiesMethods\PLANScenarioType.partial.cs" />
+    <Compile Include="EntitiesMethods\ModelLmmplusSvjd.partial.cs" />
+    <Compile Include="EntitiesMethods\ModelE2fbk.partial.cs" />
+    <Compile Include="EntitiesMethods\ModelLmmplus.partial.cs" />
+    <Compile Include="EntitiesMethods\IAnalysis.cs" />
+    <Compile Include="EntitiesMethods\Model.partial.cs" />
+    <Compile Include="EntitiesMethods\Real.partial.cs" />
+    <Compile Include="EntitiesMethods\IScenarioCurve.cs" />
+    <Compile Include="EntitiesMethods\Results\ScenarioAnalysisTest.cs" />
+    <Compile Include="EntitiesMethods\Results\ScenarioElaborationTest.cs" />
+    <Compile Include="EntitiesMethods\Results\BtmStatisticsTest.cs" />
+    <Compile Include="EntitiesMethods\SESScenarioType.partial.cs" />
+    <Compile Include="EntitiesMethods\Results\ConfigurationResult.cs" />
+    <Compile Include="EntitiesMethods\Results\IIResult.cs" />
+    <Compile Include="EntitiesMethods\Results\EXTRA.partial.cs" />
+    <Compile Include="EntitiesMethods\Results\SUMMARY.partial.cs" />
+    <Compile Include="EntitiesMethods\Results\TRANSITION_MATRIX.partial.cs" />
+    <Compile Include="EntitiesMethods\Results\REALC.partial.cs" />
+    <Compile Include="EntitiesMethods\Results\CURVES_MC_2.partial.cs" />
+    <Compile Include="EntitiesMethods\Results\CURVES_MC_1.partial.cs" />
+    <Compile Include="EntitiesMethods\Results\ConfigurationResultManager.cs" />
+    <Compile Include="EntitiesMethods\Results\IResult.cs" />
+    <Compile Include="EntitiesMethods\UPRACScenarioType.partial.cs" />
+    <Compile Include="EntitiesMethods\Credit.partial.cs" />
+    <Compile Include="EntitiesMethods\CreditTransitionMatrix.partial.cs" />
+    <Compile Include="EntitiesMethods\EBSScenarioType.partial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntitiesMethods\EIOPAScenarioType.partial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntitiesMethods\InitialScenarioType.cs" />
+    <Compile Include="EntitiesMethods\MCEVScenarioType.partial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntitiesMethods\ModelParameter.partial.cs" />
+    <Compile Include="EntitiesMethods\NBVScenarioType.partial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntitiesMethods\ScenarioType.partial.cs" />
+    <Compile Include="EntitiesMethods\SwaptionsForCheck.cs" />
+    <Compile Include="EntitiesMethods\VAScenarioType.partial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntitiesMethods\ConfigurationBase.cs" />
+    <Compile Include="EntitiesMethods\Weight.partial.cs" />
+    <Compile Include="EntitiesMethods\Swaption.partial.cs" />
+    <Compile Include="EntitiesMethods\Property.partial.cs" />
+    <Compile Include="EntitiesMethods\NominalRate.partial.cs" />
+    <Compile Include="EntitiesMethods\Equity.partial.cs" />
+    <Compile Include="EntitiesMethods\ISwaption.cs" />
+    <Compile Include="EntitiesMethods\IReleaseConfigurationActionInfo.cs" />
+    <Compile Include="Equity.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EXTRA.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Factor.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inflation.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InflationCurve.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelParameter.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelsFactor.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTemplate.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NominalCurve.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NominalRate.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Real.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REALC.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScenarioModel.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ScenarioSummary.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScenarioType.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUMMARY.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Swaption.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SwaptionCurve.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestWeight.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestWeigthPoint.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSITION_MATRIX.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Weight.cs">
+      <DependentUpon>ScenarioModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ScenarioEntities.snk" />
+    <None Include="ScenarioModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ScenarioModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>IF EXIST $(TargetPath).LOCKED  (del $(TargetPath).LOCKED) ELSE (IF EXIST $(TargetPath) (move $(TargetPath) $(TargetPath).LOCKED))</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="BuildName" default="build" xmlns="http://nant.sf.net/release/0.85/nant.xsd">
+	<property name="solution.file" value="ScenarioNavigator_WebPorting.sln" />
+	<property name="build.configuration" value="Debug"/>
+
+	<property name="dir.nunit" value="D:\Projects\NUnit\NUnit-2.6.0.12051\bin"/>
+	<property name="dir.karma" value="C:\Users\StochasticScenariosU\AppData\Roaming\npm\node_modules\karma\bin"/>
+	<property name="project.name" value="D:\Jenkins\jobs\ScenarioNavigator_WebPorting_NoWebApi\workspace\Client\bin\Client.dll"/>
+	<property name="project.dir" value="D:\Jenkins\jobs\ScenarioNavigator_WebPorting_NoWebApi\workspace\Client"/>
+
+	<property name="setup.webapi.binfolder" value="D:\Jenkins\jobs\ScenarioNavigatorBuild_Integration\workspace\Scenario.WebApi.Setup\bin\Debug" />
+    <property name="webapi.publishfolder" value="D:\temp\WebApiPublishFolder" />
+	
+	<property name="setup.webapp.binfolder" value="Client.Setup\bin\Debug" />
+    <property name="webapp.publishfolder" value="D:\temp\WebAppPublishFolder" /> 
+
+	<target name="build" depends="compile"></target>
+
+	<target name="tests">
+	
+	  <call target="compile" />
+	  <call target="IIS_webapi_install" />
+      <call target="IIS_webapp_install" />
+	  
+	  <call target="ui_e2e_test" />
+	  <call target="ui_unit_test" /> 
+	  
+	  
+	  <call target="IIS_webapp_uninstall" />
+	  <call target="IIS_webapi_uninstall" />
+
+
+	</target>
+
+	<target name="ui_e2e_test" description="run UI e2e tests.">
+			<exec program="${dir.nunit}\nunit-console.exe"
+				commandline="${project.name} /xml=D:\Jenkins\jobs\ScenarioNavigator_WebPorting_NoWebApi\workspace\e2eTestResults.xml /nologo" />
+	</target>
+
+	<target name="ui_unit_test" description="run UI unit tests.">
+			<exec program="${environment::get-variable('KARMA_CMD')}\karma.cmd" workingdir="${workingDir}\Client"
+				  commandline="start karma.config.js /xml=D:\Jenkins\jobs\ScenarioNavigator_WebPorting_NoWebApi\workspace\e2eTestResults.xml /nologo"/>
+	</target>
+	
+	<target name="compile">
+	    <call target="jenkinsversioning" />
+		<echo message="${build.configuration}"/>
+		<exec program="${framework::get-framework-directory(framework::get-target-framework())}\msbuild.exe"
+		  commandline="${solution.file} /m /t:Rebuild /p:PlatformTarget=AnyCPU /p:Configuration=${build.configuration} /v:q" workingdir="." />
+    </target>
+	
+	<target name="jenkinsversioning">
+		<loadfile file="${workingDir}\Client\build.dat" property="token-file">
+		  <filterchain>
+			<replacetokens>
+			  <!-- ${buildVersion} = environmental variable injected by Jenkins Version Number Plug-in in Nant cmd script(-D:buildVersion=%JENKINS_BUILD_VERSION%) -->
+			  <token key="BUILD" value="${buildVersion}" />
+			</replacetokens>
+		  </filterchain>
+		</loadfile>
+		<echo file="${workingDir}\Client\build.dat" message="${token-file}" append="false" />
+  </target>
+	
+	<target name="IIS_webapp_install">
+		<echo message="Installing WebAPP in IIS environment..."/>
+		<echo message="Running setup from ${setup.webapp.binfolder}"/>
+		
+		<exec program="${setup.webapp.binfolder}\Setup.exe"
+		  commandline=" /INSTDIR=${webapp.publishfolder} /SILENT=TRUE"/>
+		
+		<echo message="WebApp published in ${webapp.publishfolder}"/>
+	</target>
+	  
+	<target name="IIS_webapp_uninstall">
+	    <echo message="Removing WebAPP from IIS environment..."/>
+	    	
+		<exec program="${webapp.publishfolder}\uninstaller.exe"/>
+		
+		<echo message="${webapp.publishfolder} folder removed"/>
+		<echo message="WebApp site removed from IIS"/>
+	</target>
+	
+	<target name="IIS_webapi_install">
+		<property name="build.configuration" value = "Debug"/>
+		
+		<echo message="Installing WebAPI in IIS environment..."/>
+		<echo message="Running setup from ${setup.webapi.binfolder}"/>
+		
+		<exec program="${setup.webapi.binfolder}\Setup.exe"
+		  commandline=" /INSTDIR=${webapi.publishfolder} /UPDATECONFIG=TRUE /SILENT=TRUE"/>
+		
+		<echo message="WebApi published in ${webapi.publishfolder}"/>
+		
+		<property name="build.configuration" value = "Release"/>
+    </target>
+  
+    <target name="IIS_webapi_uninstall">
+		<property name="build.configuration" value = "Debug"/>
+		
+		<echo message="Removing WebAPI from IIS environment..."/>
+		<exec program="${webapi.publishfolder}\uninstaller.exe"/>
+		  
+		<echo message="${webapi.publishfolder} folder removed"/>
+		<echo message="WebAPI site removed from IIS"/>
+			
+		<property name="build.configuration" value = "Release"/>
+    </target>
+	
+</project>

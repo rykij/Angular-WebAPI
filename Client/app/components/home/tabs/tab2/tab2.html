@@ -1,0 +1,11 @@
+﻿<div ng-controller="Tab2Controller as list">
+    [tab2.html]
+     <h3 id="title">List of elements</h3>
+     <div data-ng-repeat="elem in list.getList()">
+        <div class="Row">
+            <div class="Cell">
+                 <label id="dataId">{{elem.name}}</label>
+            </div>
+        </div>
+   </div>   
+</div>

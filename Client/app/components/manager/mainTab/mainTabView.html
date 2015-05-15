@@ -1,0 +1,75 @@
+ <ul ng-init="tab = 1" ng-controller="MainTabController as manager">
+    <!-- TAB DEFINITION -->
+	<li id="runjob_tab" class="litab" ng-class="{active:tab===1}"> 
+		<a href ng-click="tab = 1">Run Job</a>	
+	</li>
+	<li id="scenariolist_tab" class="litab" ng-class="{active:tab===2}"> 
+		<a href ng-click="tab = 2">Get List</a> 
+	</li>
+
+    <!-- RUN JOB BUTTONS -->
+    <div ng-show="tab === 1">
+        <div class="Row">
+            <div class="Cell">
+                <div class="Button">
+                    <md-button id="jobsubmit" type="submit" ng-click="manager.getJobStatus()">Job Status</md-button>
+                </div>
+            </div>
+            <div class="Cell">
+                <div class="Button">
+                    <md-button id="runjob" type="submit" ng-click="manager.runJob(24558)">Run job</md-button>    
+                </div>
+            </div>
+            <div class="Cell">
+                <div class="Button">
+                    <md-button id="abortJob" type="submit" ng-click="manager.abortJob(24558)">Abort job</md-button>    
+                </div>
+            </div>
+        </div>
+
+        <!-- JOB STATUS PANEL -->
+        <fieldset>
+        <legend>Job Status</legend>
+            <div class="spinner">
+
+                <!-- loadingDirective.js -->
+                <spinner id="spinnerJobStatus" group="jobStatus"></spinner>
+
+                <div id="jobstatustable" ng-show="manager.job != null">
+                    <!-- workaround for skip JSON ordering-->
+                    <div data-ng-repeat="key in manager.notSortedJson(manager.job)" ng-init="value = manager.job[key]">
+                          <label id="keyId">{{key}}:</label>
+                          <label id="dataId">{{value}}</label> 
+                    </div>   
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <!-- GET LIST BUTTONS -->
+    <div ng-show="tab === 2">   
+        <div  class="Row">
+            <div class="Cell">
+                <div class="Button">
+                    <md-button id="scenarioList" type="submit" ng-click="manager.getScenarioList()">Get list</md-button>    
+                </div>
+            </div>
+        </div>
+  
+
+        <!-- SCENARIO LIST PANEL -->
+        <fieldset>
+            <legend>List of scenarios</legend>
+                <div class="spinner">
+
+                <!-- loadingDirective.js -->
+                <spinner id="spinnerScenarioList" group="scenarioList"></spinner> 
+
+                <div>
+                    <div ng-repeat="(elem, list) in manager.selectedElement | groupBy: manager.groupBy">
+                         <label>{{elem | date:'dd-MM-yyyy'}}</label>
+                    </div>
+                </div>
+        </fieldset>
+    </div>
+</ul>	

@@ -1,0 +1,65 @@
+﻿<div id="form-wrapper" class="form-container" layout="row" layout-sm="column">
+    <form name="loginForm" ng-controller="LoginController as form" novalidate>
+        <div flex offset="50">
+           [flex = 50]
+            <fieldset>
+                <legend>User Credentials</legend>
+                <div>
+                    <div class="Row">
+                        <div class="Cell">
+                            <label for="user">Domain\User:</label>
+                        </div>
+                        <div class="Cell">
+                            <input id="user" name="user" type="text" ng-model="form.login.UserName" placeholder="insert user name" required/>
+                            <!-- <span class="error" ng-show="loginForm.user.$error.required">*</span> -->
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="Cell">
+                            <label for="pwd">Password:</label>
+                        </div>
+                        <div class="Cell">
+                            <input id="pwd" name="pwd" type="password" ng-model="form.login.Password"  placeholder="type password"  required/>
+                            <!-- <span class="error" ng-show="loginForm.pwd.$error.required">*</span> -->
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="Cell">
+                            <label for="pwd">Confirm:</label>
+                        </div>
+                        <div class="Cell">
+                            <input id="confirmpwd" name="confirmpwd" type="password"  ng-model="form.login.ConfirmPassword" password-match="form.login.Password" placeholder="re-type password" required />
+                            <span class="error" ng-show="loginForm.confirmpwd.$error.match">Password don't match</span>
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="Cell"></div>
+                        <div class="Cell">
+                            <label for="rememberMe">Remember Me:</label>
+                            <input id="rememberMe"  name="rememberMe" type="checkbox" ng-model="form.login.rememberMe" />
+                        </div>
+                    </div>
+                    <div class="Row">
+                        <div class="Cell">
+                            <button type="submit" ng-click="form.checkUserCredentials(loginForm.$valid)">Login</button>
+                        </div>
+                        <div class="Cell" ng-if="form.error">
+                            <label id="error" class="error">{{form.error}}</label>
+                        </div>
+                        <div class="Cell" ng-if="form.message == 'Authentication failed'">
+                            <label id="message" class="error">{{form.message}}</label>
+                        </div>
+                         <div class="Cell" ng-if="form.message != 'Authentication failed'">
+                            <label id=message" class="valid">{{form.message}}</label>
+                        </div>
+                    </div>
+               </div>
+            </fieldset>
+        </div>
+    </form>
+
+   <!-- <div ng-if="loginForm.loginFailure">
+        <h5>Authentication failure!</h5>
+    </div>-->
+
+</div>

@@ -1,0 +1,504 @@
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+    height: 99%;
+    width: 99%;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 0.0625em solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/* ===================
+    FORM VALIDATION
+   =================== */
+
+.ng-submitted .ng-invalid {
+  border-color: red;
+  border-width: 2px;
+} 
+
+.ng-submitted .ng-valid {
+  border-color: #4a8b2e;
+  border-width: 0.125em;
+} 
+
+.error {
+  font-size:smaller;
+  color:red;
+}
+
+.valid {
+  font-size:smaller;
+  color:#4a8b2e;
+}
+
+/* ===================
+    SPINNER
+   =================== */
+
+.spinner {
+    text-align:center;
+    position: relative;
+}
+
+/* ===================
+    TAB
+   =================== */
+
+.lutab {
+	float: none;
+    -moz-border-radius: 0.3125em 0.375em;
+    -webkit-border-radius:0.3125em 0.3125em;
+    border-radius: 0.3125em;
+	border: solid 1px rgb(198, 198, 198);
+	padding: 0.4375em 0.6875em;
+	background-color: rgb(248,248,248);
+}
+.litab {
+	/*float: left;
+	background-color: rgb(200,200,200);
+	padding: 5px 19px;
+	margin: 5px 2px 5px 0px;
+	color: black;
+	list-style: none;*/
+    list-style: none;
+
+    background-color: rgb(200,200,200);
+    padding: 0.3125em 1.1875em;
+    margin: 0.3125em 0.125em 0.3125em  0em;
+    color: black;
+
+    display:inline-block;
+    /*background-color: #000; */
+    /* color: #FFF; */
+    /* border: 1px solid black; */
+	/* border-radius: 5px; */
+}
+.litab:hover, li:hover a {
+	background-color:  #4a8b2e;
+	color:white;
+}
+.litab a {
+	text-decoration: none;
+	color: white;
+	font-size: 21px;
+	font-style: italic;
+	/*text-shadow: 1px 0px 3px rgb(157, 157, 157);*/
+}
+.active {
+	background-color:  #4a8b2e;
+}
+
+/* ===================
+    MAIN TAB
+   =================== */
+[role="tabpanel"] {
+    transition: none;
+}
+
+md-tabs {
+  border-bottom: 0.0625em solid rgba(0, 0, 0, 0.12); 
+}
+
+md-tab[disabled] {
+  opacity: 0.5; 
+}
+md-tabs.md-default-theme md-tab.active {
+  color:white;
+}
+label {
+  text-align: left;
+}
+
+/* ===================
+    BUTTON
+   =================== */
+
+.md-button.md-default-theme {
+  background-color:rgba(84, 139, 46, 0.25);
+  
+}
+
+/* ===================
+   TREEVIEW
+   =================== */
+.angular-ui-tree-placeholder {
+          background: #f0f9ff;
+          border: 0.125em dashed #bed2db;
+}
+
+.angular-ui-tree-handle {
+    background: #f8faff;
+    border: 1px solid #dae2ea;
+    color: #7c9eb2;
+    padding: 0.625em 0.625em;
+}
+
+
+/* ===================
+    TABLE
+   =================== */
+
+.Table {
+   display: table;
+}
+
+.Title {
+    display: table-caption;
+    text-align: left;
+    font-weight:300;
+    font-size:medium;
+}
+
+.Heading {
+    display: table-row;
+    font-weight: bold;
+    text-align: center;
+}
+
+.Button {
+   display: inline-table;
+   text-align: justify;
+}
+
+.Col {
+   float:left;/*fix for  buggy browsers*/
+   display:table-column;         
+   width: 6.25em;         
+}
+
+.Row {
+   display: table-row;
+   border:solid 1px;
+}
+
+.Cell {
+    display:table-cell;
+    padding-left: 0.3125em;
+    padding-right: 0.3125em;
+    /*border:solid 1px;*/ 
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding-top: 0.8em;
+    margin-top: 1.9em;
+    margin-bottom: 1.9em;
+    border: 0.1em #aaa solid;
+    -moz-border-radius: 0.2em 0.2em;
+    -webkit-border-radius:0.2em 0.2em;
+     border-radius: 0.2em;
+}
+
+/*#####################################*/
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+body {
+    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+
+/* ===================
+    ALL: Grey Theme
+   =================== */
+
+.header-container {
+    /*border-bottom: 1.2500em solid #aaa;*/
+}
+
+.footer-container,
+.main aside {
+    /*border-top: 1.2500em solid #aaa;*/
+}
+
+.header-container,
+.footer-container,
+.main aside {
+    background: #4a8b2e;
+}
+
+.title {
+    color: white;
+}
+
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+.main {
+    padding: 1.875em 0;
+  
+    border: 1px solid green;
+
+    overflow:hidden;
+}
+
+.main-container{
+    height: 100%;
+    width: 100%;
+    border: 1px solid red;
+    overflow:hidden;
+}
+
+.main article h1 {
+    font-size: 2em;
+}
+
+.main aside {
+    color: white;
+    padding: 0px 5% 0.6250em;
+}
+
+.footer-container footer {
+    color: white;
+    padding: 1.2500em 0;
+}
+
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 1.2500em;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+/* ====================
+    INTERMEDIATE: Menu
+   ==================== */
+
+ .footer-container footer {
+    color: white;
+    padding: 1.2500em 0;
+    }
+}
+
+@media screen and (device-height: 320px) and (device-width: 480px)
+{
+  .footer-container footer {
+    color: white;
+    padding: 1.2500em 0;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+/* ====================
+    WIDE: CSS3 Effects
+   ==================== */
+
+    .header-container,
+    .main aside {
+        /*-webkit-box-shadow: 0 0.3125em 0.6250em #aaa;
+           -moz-box-shadow: 0 0.3125em 0.6250em #aaa;
+                box-shadow: 0 0.3125em 0.6250em #aaa;*/
+    }
+
+/* ============
+    WIDE: Menu
+   ============ */
+
+    .title {
+        float: left;
+    }
+
+/* ============
+    WIDE: Main
+   ============ */
+
+    .main article {
+        float: left;
+        width: 57%;
+    }
+
+    .main aside {
+        float: right;
+        width: 28%;
+    }
+
+    .footer-container {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+
+    .wrapper {
+        width: 1026px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+
+    .footer-container {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    /* display: table; */
+    display: block;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
