@@ -1,0 +1,4 @@
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\WebApi.SetUp\bin\Debug\WebAPI.SetUp.dll
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\WebApi.SetUp\bin\Debug\WebAPI.SetUp.pdb
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\WebApi.SetUp\obj\Debug\WebAPI.SetUp.dll
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\WebApi.SetUp\obj\Debug\WebAPI.SetUp.pdb

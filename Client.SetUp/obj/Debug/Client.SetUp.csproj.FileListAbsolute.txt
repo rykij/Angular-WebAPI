@@ -1,0 +1,4 @@
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client.SetUp\bin\Debug\Client.SetUp.dll
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client.SetUp\bin\Debug\Client.SetUp.pdb
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client.SetUp\obj\Debug\Client.SetUp.dll
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client.SetUp\obj\Debug\Client.SetUp.pdb

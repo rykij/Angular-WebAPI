@@ -1,0 +1,14 @@
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\bin\Client.dll.config
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\bin\Client.dll
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\bin\Client.pdb
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\bin\nunit.framework.dll
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\bin\Protractor.dll
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\bin\WebDriver.dll
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\bin\WebDriver.Support.dll
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\bin\nunit.framework.xml
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\bin\Protractor.pdb
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\bin\Protractor.xml
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\bin\WebDriver.xml
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\bin\WebDriver.Support.xml
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\obj\Debug\Client.dll
+C:\Users\riccardo.portolan\Documents\GitHub\Angular-WebAPI\Client\obj\Debug\Client.pdb
